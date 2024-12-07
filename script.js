@@ -5,6 +5,12 @@ const wrapper = document.querySelector('.wrapper'),
 	img = wrapper.querySelector('.qr-code img')
 let curentValueInput
 
+const btnImg = document.querySelector('.block-img img')
+
+btnImg.addEventListener("click", function (params) {
+	window.location.reload();
+})
+
 form.addEventListener('submit', event => {
 	event.preventDefault()
 	const inputValue = input.value.trim()
@@ -21,12 +27,6 @@ form.addEventListener('submit', event => {
 		alert('Ошибка при загрузке QR-кода. Пожалуйста, попробуйте еще раз.')
 		location.reload()
 	})
-})
-
-input.addEventListener('input', function () {
-	if (this.value.trim() && wrapper.classList.contains('active')) {
-		wrapper.classList.remove('active')
-	}
 })
 
 //! link API
